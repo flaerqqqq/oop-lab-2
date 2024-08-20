@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.controllers.BankController">
+
+    <!-- Main Menu -->
+    <VBox fx:id="mainMenu" spacing="10" alignment="CENTER" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <Button fx:id="createAccountButton" text="Create Account"/>
+        <Button fx:id="findAccountButton" text="Find Account"/>
+        <Button fx:id="deleteAccountButton" text="Delete Account"/>
+        <Button fx:id="findAllButton" text="Find All Accounts"/>
+    </VBox>
+
+    <!-- Create Account Menu -->
+    <VBox fx:id="createAccountMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <Label text="Create New Account"/>
+        <Button fx:id="createButton" text="Create"/>
+        <Button fx:id="backFromCreateButton" text="Back"/>
+        <Label fx:id="newAccountIdLabel" text=""/>
+    </VBox>
+
+    <!-- Find Account Menu -->
+    <VBox fx:id="findAccountMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <TextField fx:id="accountIdField" promptText="Account ID"/>
+        <Button fx:id="findButton" text="Find"/>
+        <Button fx:id="backFromFindButton" text="Back"/>
+    </VBox>
+
+
+    <VBox fx:id="deleteAccountMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <TextField fx:id="deleteAccountIdField" promptText="Account ID"/>
+        <Button fx:id="deleteButton" text="Delete"/>
+        <Button fx:id="backFromDeleteButton" text="Back"/>
+    </VBox>
+
+    <!-- Account Management Menu -->
+    <VBox fx:id="accountMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <TextField fx:id="accountIdLabel" editable="false"/>
+        <Label fx:id="accountBalanceLabel"/>
+        <TextField fx:id="amountField" promptText="Amount"/>
+        <Button fx:id="depositButton" text="Deposit"/>
+        <Button fx:id="withdrawButton" text="Withdraw"/>
+        <Button fx:id="transferButton" text="Transfer"/>
+        <Button fx:id="backFromAccountButton" text="Back"/>
+    </VBox>
+
+    <!-- All Accounts Menu -->
+    <VBox fx:id="allAccountsMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <TableView fx:id="accountsTable">
+            <columns>
+                <TableColumn fx:id="accountIdColumn" text="Account ID"/>
+                <TableColumn fx:id="balanceColumn" text="Balance"/>
+            </columns>
+        </TableView>
+        <Button fx:id="backFromAllAccountsButton" text="Back"/>
+    </VBox>
+
+    <!-- Transfer Menu -->
+    <VBox fx:id="transferMenu" spacing="10" alignment="CENTER" visible="false" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <ComboBox fx:id="transferAccountComboBox" promptText="Select Account"/>
+        <Button fx:id="executeTransferButton" text="Execute Transfer"/>
+        <Button fx:id="backFromTransferButton" text="Back"/>
+    </VBox>
+
+</AnchorPane>
